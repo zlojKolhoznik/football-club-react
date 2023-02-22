@@ -9,9 +9,17 @@ ul {
     list-style-position: inside;
     margin: 15px;
 }
+
+.club {
+    padding: 20px;
+  }
+  .club-logo {
+    width: 200px;
+    height: 200px;
+  }
 .club-logo {
-    width: 128px;
-    height: 128px;
+    width: 200px;
+    height: 200px;
     margin: 15px;
 }
 .club-title {
