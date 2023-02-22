@@ -1,36 +1,26 @@
-import Club from "./Club";
 import ClubMain from "./ClubMain";
-import './App.css';
+import { CLUBS } from "./mock-clubs";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  let players = [
-    "Marc Andre ter Stegen - goalkeeper",
-    "Inaki Pena - goalkeeper",
-    "Ronald Araujo - defender",
-    "Andreas Christensen - defender",
-    "Marcos Alonso - defender",
-    "Jordi Alba - defender",
-    "Jules Kounde - defender",
-    "Eric Garcia - defender",
-    "Sergio Busquets - midfielder",
-    "Gavi - midfielder",
-    "Pedri - midfielder",
-    "Frank Kessie - midfielder",
-    "Sergi Roberto - midfielder",
-    "Frenkie de Jong - midfielder",
-    "Ousmane Dembele - forward",
-    "Robert Lewandowski - forward",
-    "Ansu Fati - forward",
-    "Fernan Torres - forward",
-    "Raphinha - forward",
-    "Xavi - coach"
-  ]
-  let club = new Club("FC Barcelona", "Barcelona", "/img/barcelona.png", 1899, 26, 30, 21, players);
-  return (
-    <div className="App">
-      <ClubMain club={club} />
-    </div>
-  );
+    let [currentClub, setCurrentClub] = useState(0);
+    const nextClub = () => {
+        setCurrentClub(currentClub + 1);
+    };
+    const prevClub = () => {
+        setCurrentClub(currentClub - 1);
+    };
+    return (
+        <div className="App">
+            <ClubMain club={CLUBS[currentClub]} />
+            <div className="club-buttons">
+                <button onClick={prevClub} disabled={currentClub <= 0}>Prev</button>
+                <button onClick={nextClub} disabled={currentClub >= CLUBS.length - 1}>Next</button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
+

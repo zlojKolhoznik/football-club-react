@@ -8,7 +8,7 @@ export default function ClubMain(props) {
     let green = Math.random() * 255;
     let blue = Math.random() * 255;
     return (
-        <div style={{backgroundColor: `rgb(${red}, ${green}, ${blue})`}}>
+        <div className="club" style={{backgroundColor: `rgb(${red}, ${green}, ${blue})`}}>
             <ClubInfo club={club} />
             <ClubAchievements club={club} />
             <ClubMembers club={club} />
