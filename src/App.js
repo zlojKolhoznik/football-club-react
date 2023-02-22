@@ -1,7 +1,5 @@
 import Club from "./Club";
-import ClubInfo from "./ClubInfo";
-import ClubAchievements from "./ClubAchievements";
-import ClubMembers from "./ClubMembers";
+import ClubMain from "./ClubMain";
 import './App.css';
 
 function App() {
@@ -30,9 +28,7 @@ function App() {
   let club = new Club("FC Barcelona", "Barcelona", "/img/barcelona.png", 1899, 26, 30, 21, players);
   return (
     <div className="App">
-      <ClubInfo club={club} />
-      <ClubAchievements club={club} />
-      <ClubMembers club={club} />
+      <ClubMain club={club} />
     </div>
   );
 }
